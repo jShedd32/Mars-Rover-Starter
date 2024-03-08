@@ -1,8 +1,8 @@
 class Rover {// Write code here!
    constructor(position){
-      this.position = position
-      this.mode = 'NORMAL'
-      this.generatorWatts = 110
+      this.position = position;
+      this.mode = 'NORMAL';
+      this.generatorWatts = 110;
    }
 
    receiveMessage(message){
@@ -12,8 +12,8 @@ class Rover {// Write code here!
             if (this.mode === "NORMAL") {
                this.position = command.value;
                results.push({ completed: true });
-             } else {
-               results.push({ completed: false });
+             } else{
+                  results.push({ completed: false });
              }
          }
          else if(command.commandType === "MODE_CHANGE"){
@@ -32,7 +32,7 @@ class Rover {// Write code here!
          } else {
             results.push({ completed: false, reason: "unkown command"});
          }
-         
+
       });
          return {
             message : message.name,
